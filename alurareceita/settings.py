@@ -15,7 +15,6 @@ import os, sys
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = 'zuxr3q9(pe7@slr7u5n48woe1hrgp03!hljn%575+n6aendqkn'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -72,7 +70,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'alurareceita.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
@@ -85,7 +82,6 @@ DATABASES = {
         'HOST': 'localhost'
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -105,7 +101,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -118,7 +113,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
@@ -135,6 +129,7 @@ MEDIA_URL = '/media/'
 
 # Messages
 from django.contrib.messages import constants as messages
+
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
     messages.SUCCESS: 'success',
@@ -142,3 +137,81 @@ MESSAGE_TAGS = {
 
 PROJECT_ROOT = os.path.dirname(__file__)
 sys.path.insert(0, os.path.join(PROJECT_ROOT, '../apps'))
+
+# this is for localhost development, if you are in production enviroment, you will need to remove the STATICFILES_DIRS and define your STATIC_ROOT
+TINYMCE_DEFAULT_CONFIG = {
+    # 'toolbar': "numlist bullist,"
+    #             "removeformat,",
+
+    'plugins': "pagebreak,"
+               "code,"
+               "autoresize,"
+               "lists,"
+               "style,"
+               "layer,"
+               "table,"
+               "save,"
+               "advhr,"
+               "advimage,"
+               "advlink,"
+               "emotions,"
+               "iespell,"
+               "inlinepopups,"
+               "insertdatetime,"
+               "preview,"
+               "media,"
+               "searchreplace,"
+               "print,"
+               "contextmenu,"
+               "paste,"
+               "directionality,"
+               "fullscreen,"
+               "noneditable,"
+               "visualchars,"
+               "nonbreaking,"
+               "xhtmlxtras,"
+               "template,"
+               "wordcount,"
+               "advlist,"
+               "autosave,"
+               "pagebreak"
+
+}
+
+# TINYMCE_DEFAULT_CONFIG = {
+#     'theme': "advanced"
+# }
+
+# TINYMCE_JS_URL = os.path.join(MEDIA_URL, "path/to/tiny_mce/tiny_mce.js")
+# TINYMCE_JS_ROOT = os.path.join(MEDIA_ROOT, "path/to/tiny_mce")
+# TINYMCE_DEFAULT_CONFIG = {
+#     'theme' : 'advanced',
+#     'theme_advanced_buttons1' : 'bold,italic,underline,separator,bullist,numlist,separator,link,unlink',
+#     'theme_advanced_buttons2' : '',
+#     'theme_advanced_buttons3' : '',
+#     'theme_advanced_toolbar_location' : 'top',
+#     'theme_advanced_toolbar_align': 'left',
+#     'paste_text_sticky': True,
+#     'paste_text_sticky_default' : True,
+#     'valid_styles' : 'font-weight,font-style,text-decoration',
+# }
+
+# TINYMCE_JS_URL = 'http://debug.example.org/tiny_mce/tiny_mce_src.js'
+# TINYMCE_DEFAULT_CONFIG = {
+#     'plugins': "table,spellchecker,paste,searchreplace",
+#     'theme': "advanced",
+#     'cleanup_on_startup': True,
+#     'custom_undo_redo_levels': 10,
+# }
+# TINYMCE_SPELLCHECKER = True
+# TINYMCE_COMPRESSOR = True
+# TINYMCE_EXTRA_MEDIA = {
+#     'css': {
+#         'all': [
+#             ...
+#         ],
+#     },
+#     'js': [
+#         ...
+#     ],
+# }
