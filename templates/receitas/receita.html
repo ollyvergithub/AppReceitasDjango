@@ -12,26 +12,7 @@
 
     {% include 'partials/_menu.html' %}
 
-    <!-- Receipe Post Search
-    <div class="receipe-post-search mb-80">
-        <div class="container">
-            <form action="#" method="post">
-                <div class="row">
-                    <div class="col-12 col-lg-5">
-                        <select name="select1" id="select1">
-                            <option value="1">Comida típica brasileira</option>
-                            <option value="1">Massas</option>
-                            <option value="1">Veganas</option>
-                        </select>
-                    </div>
-                    <div class="col-12 col-lg-2 text-right">
-                        <button type="submit" class="btn delicious-btn">Buscar</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
--->
+
     <!-- Receipe Slider -->
     <div class="container">
         <div class="row">
@@ -68,8 +49,9 @@
             <div class="row">
                 <div class="col-12 col-lg-8">
                     <!-- Single Preparation Step -->
+                    <h4>Modo de preparo</h4>
                     <div class="single-preparation-step d-flex">
-                        <p>{{ receita.modo_de_preparo }}</p>
+                        <div id="modo_preparo" class="modo_preparo" data-produto="{{ receita.modo_de_preparo }}"></div>
                     </div>
                 </div>
 
@@ -77,8 +59,8 @@
                 <div class="col-12 col-lg-4">
                     <div class="ingredients">
                         <h4>Ingredientes</h4>
-                        <div class="ingredients">
-                            <p>{{ receita.ingredientes }}</p>
+                        <div id="ingredients" class="ingredients" data-produto="{{ receita.ingredientes }}">
+
                         </div>
                     </div>
                 </div>
